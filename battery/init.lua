@@ -284,11 +284,13 @@ local function update()
   end
   state = status[state]
 
-  battery_status = lib.markup.fg.color(color, state) .. " " .. awful.util.escape(tostring(bat.charge)) .. "%"
+  -- removed battery state icon
+  -- battery_status = lib.markup.fg.color(color, state) .. " " .. awful.util.escape(tostring(bat.charge)) .. "%"
+  battery_status = awful.util.escape(tostring(bat.charge)) .. "%"
 
-  if bat.time then
-    battery_status = battery_status .. " " .. awful.util.escape(bat.time)
-  end
+  -- if bat.time then
+  --   battery_status = battery_status .. " " .. awful.util.escape(bat.time)
+  -- end
 
   widget:set_markup(battery_status)
 end

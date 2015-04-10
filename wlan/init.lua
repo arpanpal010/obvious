@@ -22,7 +22,8 @@ function format_decibel(link)
   elseif link <= 5 then
     color = "#900000"
   end
-  return lib.markup.fg.color(color, "☢") .. string.format(" %02ddB", link)
+  -- return lib.markup.fg.color(color, "☢") .. string.format(" %02ddB", link)
+  return string.format(" %02ddB", link)
 end
 
 function format_percent(link)
@@ -32,7 +33,8 @@ function format_percent(link)
   elseif link <= 10 then
     color = "#900000"
   end
-  return lib.markup.fg.color(color,"☢") .. string.format(" %03d%%", link)
+  -- return lib.markup.fg.color(color,"☢") .. string.format(" %03d%%", link)
+  return string.format(" %03d%%", link)
 end
 
 local function get_data_source(device)
